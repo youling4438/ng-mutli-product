@@ -32,12 +32,12 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/common.scss"
             ],
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "mario-prd": {
               "budgets": [
                 {
                   "type": "initial",
@@ -52,7 +52,33 @@
               ],
               "outputHashing": "all"
             },
-            "development": {
+            "mario-dev": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
+            },
+            "luigi-prd": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "2kB",
+                  "maximumError": "4kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "luigi-dev": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
@@ -64,19 +90,19 @@
               ]
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "mario-prd"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
-            "production": {
-              "buildTarget": "mutli-prod:build:production"
+            "luigi-dev": {
+              "buildTarget": "mutli-prod:build:luigi-dev"
             },
-            "development": {
-              "buildTarget": "mutli-prod:build:development"
+            "mario-dev": {
+              "buildTarget": "mutli-prod:build:mario-dev"
             }
           },
-          "defaultConfiguration": "development"
+          "defaultConfiguration": "mario-dev"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"
@@ -97,7 +123,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles/common.scss"
             ],
             "scripts": []
           }

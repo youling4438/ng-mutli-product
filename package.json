@@ -4,9 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start-mario": "ng serve",
-    "start-luigi": "ng serve",
-    "build": "ng build",
+    "start-mario": "ng serve -c=mario-dev",
+    "start-luigi": "ng serve -c=luigi-dev",
+    "build-mario": "ng build -c=mario-prd",
+    "build-luigi": "ng build -c=luigi-prd",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
