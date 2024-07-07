@@ -11,5 +11,6 @@ import { environment } from '../environments/environment';
 export class AppComponent {
   title = 'mutli-prod-demo';
   prdName: string = PRD_NAME;
+  envName: string = environment.env_name;
   envBrandName: string = environment.brand_name;
 }
