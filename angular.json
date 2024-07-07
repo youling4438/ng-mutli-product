@@ -31,13 +31,19 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles/common.scss"
-            ],
+            "styles": [],
             "scripts": []
           },
           "configurations": {
             "mario-prd": {
+              "styles": [
+                "src/styles/mario/_styles.scss"
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/styles/mario"
+                ]
+              },
               "budgets": [
                 {
                   "type": "initial",
@@ -50,20 +56,50 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/configurations/config.ts",
+                  "with": "src/configurations/config.mario.ts"
+                },
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/mario/environment.ts"
+                }
+              ]
             },
             "mario-dev": {
+              "styles": [
+                "src/styles/mario/_styles.scss"
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/styles/mario"
+                ]
+              },
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
               "fileReplacements": [
                 {
+                  "replace": "src/configurations/config.ts",
+                  "with": "src/configurations/config.mario.ts"
+                },
+                {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
+                  "with": "src/environments/mario/environment.development.ts"
                 }
               ]
             },
             "luigi-prd": {
+              "styles": [
+                "src/styles/luigi/_styles.scss"
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/styles/luigi"
+                ]
+              },
               "budgets": [
                 {
                   "type": "initial",
@@ -76,16 +112,38 @@
                   "maximumError": "4kB"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "fileReplacements": [
+                {
+                  "replace": "src/configurations/config.ts",
+                  "with": "src/configurations/config.luigi.ts"
+                },
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/luigi/environment.ts"
+                }
+              ]
             },
             "luigi-dev": {
+              "styles": [
+                "src/styles/luigi/_styles.scss"
+              ],
+              "stylePreprocessorOptions": {
+                "includePaths": [
+                  "src/styles/luigi"
+                ]
+              },
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
               "fileReplacements": [
                 {
+                  "replace": "src/configurations/config.ts",
+                  "with": "src/configurations/config.luigi.ts"
+                },
+                {
                   "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.development.ts"
+                  "with": "src/environments/luigi/environment.development.ts"
                 }
               ]
             }
@@ -130,5 +188,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

@@ -1,3 +1,5 @@
 export const environment = {
-  pd: true,
+  prd: true,
+  env_name: 'PRD',
+  brand_name: 'Mario',
 };

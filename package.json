@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "start-mario": "ng serve -c=mario-dev",
-    "start-luigi": "ng serve -c=luigi-dev",
+    "start-mario": "ng serve -c=mario-dev --port 4200",
+    "start-luigi": "ng serve -c=luigi-dev --port 4300",
     "build-mario": "ng build -c=mario-prd",
     "build-luigi": "ng build -c=luigi-prd",
-    "watch": "ng build --watch --configuration development",
+    "watch": "ng build --watch -c=mario-dev",
     "test": "ng test"
   },
   "private": true,

@@ -1,0 +1,12 @@
+@import "theme";
+@import "mixin";
+
+
+.title{
+  @extend %font-bold;
+}
+
+.main{
+  background-color: $main-color;
+  @extend %font;
+}
